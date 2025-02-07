@@ -1,0 +1,69 @@
+.custom-slider .slick-dots {
+  bottom: -30px;
+}
+
+.custom-slider .slick-dots li button:before {
+  color: #fff;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.custom-slider .slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
+}
+
+.custom-slider .slick-prev,
+.custom-slider .slick-next {
+  border-radius: 50%; /* Optional: Makes the button circular */
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  color: #ffffff; /* White color for the icons */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
+.custom-slider .slick-prev:hover,
+.custom-slider .slick-next:hover {
+  color: #3b82f6; /* Blue color on hover (you can change this to any color you prefer) */
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+  border-radius: 50%; /* Optional: Makes the button circular */
+
+}
+
+.custom-slider .slick-prev svg,
+.custom-slider .slick-next svg {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.custom-slider .slick-prev {
+  left: 10px;
+}
+
+.custom-slider .slick-next {
+  right: 10px;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #2d3748; /* Dark gray */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4a5568; /* Lighter gray */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #718096; /* Slightly lighter on hover */
+}
+
+
+
