@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import Image from 'next/image';
 const experiences = [
   {
     company: "Yasmine Engineering Systems",
     role: "Software Engineer (CDI)",
-    period: "01/06/2022 - Present", 
+    period: "01/06/2022 - Present",
     image: "https://lh3.googleusercontent.com/p/AF1QipPh77heXzFa26ay65gXmidUgWb3nV1nC1iQjCrg=s680-w680-h510",
   },
   {
@@ -29,7 +29,7 @@ const experiences = [
     image: "https://pbs.twimg.com/profile_images/1251261871/tunisair_400x400.jpg",
   },
 ];
-const calculateExactExperience = (startDate: any) => {
+const calculateExactExperience = (startDate: string) => {
   const now = new Date();
   const start = new Date(startDate);
 
@@ -90,11 +90,13 @@ export default function Experience() {
     >
       <div className="absolute inset-0" />
       <h2 className="text-3xl font-bold mb-12 text-center text-blue-400">
-      👨🏻‍💼 Work Experience
+        👨🏻‍💼 Work Experience
       </h2>
       <div className="max-w-4xl mx-auto relative z-10">
         {experiences.map((exp, index) => {
-          const [start, end] = exp.period.split(" - ");
+          // const [start, end] = exp.period.split(" - ");
+          const [, end] = exp.period.split(" - ");
+
           // Now check if the experience is ongoing by checking if end === "Present"
           const experienceDuration =
             end === "Present" ? "⏰ " + currentExperience : "Past experience";
@@ -123,11 +125,14 @@ export default function Experience() {
                   </motion.span>
                 </p>
               </div>
-              <img
+              <Image
                 src={exp.image}
                 alt={exp.company}
-                className="w-20 h-20 ml-6 rounded object-cover shadow-md"
+                width={80} // Ajuste selon ton besoin
+                height={80}
+                className="ml-6 rounded object-cover shadow-md"
               />
+
             </motion.div>
           );
         })}
