@@ -102,6 +102,8 @@ export default function Education() {
             <Image
               src={edu.image}
               alt={edu.institution}
+              width={80} // Ajuste selon ton besoin
+              height={80}
               className="w-20 h-20 ml-6 rounded object-cover shadow-md"
             />
           </motion.div>

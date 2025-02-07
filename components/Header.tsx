@@ -12,7 +12,7 @@ export default function Header() {
     <header className="bg-gray-800 shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
-          Seif Portfolio
+          Seif Rahmouni Portfolio
         </Link>
         <div className="hidden md:flex space-x-4">
           {["Experience", "Education", "Projects", "Skills", "Testimonials", "Contact"].map((item) => (
