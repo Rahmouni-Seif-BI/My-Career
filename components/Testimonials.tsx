@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
+//import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -48,13 +48,13 @@ export default function Testimonials() {
       <div className="max-w-4xl mx-auto px-4 relative">
         <div className="bg-gray-700 p-8 rounded-lg shadow-lg">
           <div className="flex items-center mb-4">
-            <Image
+            {/* <Image
               src={testimonials[currentTestimonial].avatar || "/placeholder.svg"}
               alt={testimonials[currentTestimonial].name}
               width={64}
               height={64}
               className="rounded-full mr-4"
-            />
+            /> */}
             <div>
               <h3 className="font-semibold text-white">{testimonials[currentTestimonial].name}</h3>
               <p className="text-gray-300">{testimonials[currentTestimonial].role}</p>

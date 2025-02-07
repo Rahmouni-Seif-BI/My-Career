@@ -3,41 +3,15 @@
 import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, ChevronLeft, ChevronRight, Globe, Code, Calendar, Maximize, Minimize } from "lucide-react"
+import { X, Code, Calendar, Maximize, Minimize, Globe } from "lucide-react"
 import Slider from "react-slick"
-import type { Project, ProjectCategories } from "../types/project"
+import type { ProjectCategories } from "../types/project"
 import { FixedSizeList as List } from "react-window";
 
 // Import CSS files
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "../styles/slider-custom.css"
-
-const CustomPrevArrow = (props) => {
-  const { className, style, onClick } = props
-  return (
-    <div
-      className={`${className} z-10 before:content-[''] left-2`}
-      style={{ ...style, display: "block" }}
-      onClick={onClick}
-    >
-      <ChevronLeft className="w-8 h-8 text-white bg-gray-800 bg-opacity-50 rounded-full p-1" />
-    </div>
-  )
-}
-
-const CustomNextArrow = (props) => {
-  const { className, style, onClick } = props
-  return (
-    <div
-      className={`${className} z-10 before:content-[''] right-2`}
-      style={{ ...style, display: "block" }}
-      onClick={onClick}
-    >
-      <ChevronRight className="w-8 h-8 text-white bg-gray-800 bg-opacity-50 rounded-full p-1" />
-    </div>
-  )
-}
 
 const projects: ProjectCategories = {
   Web: [
@@ -243,7 +217,7 @@ const projects: ProjectCategories = {
         "Floor Plan Management",
         "Time Tracking"
       ]
-      
+
     },
     {
       name: "Application for Interaction with Architectural Plans of Real Estate Projects",
@@ -265,7 +239,7 @@ const projects: ProjectCategories = {
         "User Roles and Permissions",
         "Notifications and Alerts",
         "Data Integration"
-      ]      
+      ]
     },
     {
       name: "Seif-Delivery-Food",
@@ -665,22 +639,23 @@ export default function Projects() {
                       <div className="h-80 overflow-hidden border border-gray-600 rounded-lg">
                         <List
                           height={320}
-                          itemCount={selectedProject.features.length}
+                          itemCount={selectedProject.features ? selectedProject.features.length : 0}
                           itemSize={50}
                           width="100%"
-                          className="custom-scrollbar" // Add custom scrollbar styles
+                          className="custom-scrollbar"
                         >
                           {({ index, style }) => (
-                            <div style={style}
-                              className="flex items-center text-white   p-4  last:border-none
-                            transition-transform transform  hover:bg-gray-600 hover:shadow-xl cursor-pointer custom-hover-bg"
+                            <div
+                              style={style}
+                              className="flex items-center text-white p-4 last:border-none
+      transition-transform transform hover:bg-gray-600 hover:shadow-xl cursor-pointer custom-hover-bg"
                             >
-                                <span className="text-yellow-500 mr-3">✔️</span>
-
-                              {selectedProject.features[index]}
+                              <span className="text-yellow-500 mr-3">✔️</span>
+                              {selectedProject.features?.[index] || "No feature available"}
                             </div>
                           )}
                         </List>
+
                       </div>
                     ) : (
                       <p className="text-gray-400">No specific features listed for this project.</p>

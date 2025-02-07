@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 const educations = [
   {
@@ -98,7 +99,7 @@ export default function Education() {
                 )}
               </p>
             </div>
-            <img
+            <Image
               src={edu.image}
               alt={edu.institution}
               className="w-20 h-20 ml-6 rounded object-cover shadow-md"

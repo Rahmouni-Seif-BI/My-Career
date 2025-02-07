@@ -39,7 +39,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="relative text-center text-white z-10"
       >
-        <h1 className="text-7xl font-bold mb-4">Seif's Professional Career</h1>
+        <h1 className="text-7xl font-bold mb-4">Seif&rsquo;s Professional Career</h1>
         <p className="text-2xl mb-8">
           Experienced software engineer specializing in mobile, web, and desktop applications
         </p>
