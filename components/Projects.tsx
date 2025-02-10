@@ -51,8 +51,8 @@ export default function Projects() {
           <button
             key={category}
             className={`px-4 py-2 rounded-full mb-2 transition-colors ${activeCategory === category
-                ? "bg-blue-500 text-white"
-                : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
               }`}
             onClick={() => setActiveCategory(category)}
           >
@@ -100,14 +100,14 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-start md:items-center justify-center p-0 md:p-4 z-50 overflow-y-auto"
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-0 md:p-4 z-50 overflow-y-auto"
             onClick={closeProjectDetails}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-gray-800 rounded-lg max-w-6xl w-full relative mx-2 md:mx-auto my-4 md:my-0 overflow-hidden"
+              className="bg-gray-800 rounded-lg max-w-6xl w-full mx-2 md:mx-auto my-4 md:my-0 overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button - Stays fixed on mobile */}
@@ -185,7 +185,7 @@ export default function Projects() {
                         {selectedProject.features.map((feature, index) => (
                           <div
                             key={index}
-                            className="flex items-center text-white p-3 text-sm md:text-base hover:bg-gray-700 transition-colors" 
+                            className="flex items-center text-white p-3 text-sm md:text-base hover:bg-gray-700 transition-colors"
                           >
                             <span className="text-yellow-500 mr-2">✔️</span>
                             {feature}
