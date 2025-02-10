@@ -23,7 +23,7 @@ const experiences = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-9okODzJNq6I03dKSEJrso569lGGMkNQLg&s",
   },
   {
-    company: "Tunisaire",
+    company: "Tunisair",
     role: "Web Application Developer (Intern)",
     period: "2021 - 2021",
     image: "https://pbs.twimg.com/profile_images/1251261871/tunisair_400x400.jpg",
