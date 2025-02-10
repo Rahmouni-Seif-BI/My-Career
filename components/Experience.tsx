@@ -69,9 +69,7 @@ const calculateExactExperience = (startDate: string) => {
   return `${years}y ${months}m ${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
 
-
 export default function Experience() {
-  // Updated the start date to "2022-06-01" to match the new period
   const [currentExperience, setCurrentExperience] = useState(
     calculateExactExperience("2022-06-01")
   );
@@ -86,20 +84,16 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-20 bg-gray-900 text-white relative overflow-hidden"
+      className="py-12 md:py-20 bg-gray-900 text-white relative overflow-hidden"
     >
       <div className="absolute inset-0" />
-      <h2 className="text-3xl font-bold mb-12 text-center text-blue-400">
+      <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center text-blue-400">
         👨🏻‍💼 Work Experience
       </h2>
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
         {experiences.map((exp, index) => {
-          // const [start, end] = exp.period.split(" - ");
           const [, end] = exp.period.split(" - ");
-
-          // Now check if the experience is ongoing by checking if end === "Present"
-          const experienceDuration =
-            end === "Present" ? "⏰ " + currentExperience : "Past experience";
+          const isCurrent = end === "Present";
 
           return (
             <motion.div
@@ -107,32 +101,41 @@ export default function Experience() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.3 }}
-              className="mb-10 p-6 bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 flex items-center"
+              className="mb-6 md:mb-10 p-4 md:p-6 bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 flex flex-col md:flex-row items-start md:items-center"
             >
-              <div className="flex-1">
-                <h3 className="text-2xl font-semibold mb-2 text-blue-400">
+              <div className="flex-1 order-2 md:order-1">
+                <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2 text-blue-400">
                   {exp.company}
                 </h3>
-                <p className="text-lg text-gray-300 mb-1">{exp.role}</p>
-                <p className="text-md text-gray-400">
+                <p className="text-base md:text-lg text-gray-300 mb-1">
+                  {exp.role}
+                </p>
+                <p className="text-sm md:text-base text-gray-400">
                   {exp.period}{" "}
-                  <motion.span
-                    className="font-mono bg-gray-800 px-2 py-1 rounded text-yellow-400 shadow-lg"
-                    animate={{ opacity: [0.6, 1, 0.6], scale: [1, 1.1, 1] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                  >
-                    {experienceDuration}
-                  </motion.span>
+                  {isCurrent ? (
+                    <motion.span
+                      className="font-mono bg-gray-800 px-2 py-1 rounded text-yellow-400 shadow-lg inline-block mt-1 md:mt-0 ml-1"
+                      animate={{ opacity: [0.6, 1, 0.6], scale: [1, 1.1, 1] }}
+                      transition={{ repeat: Infinity, duration: 1.5 }}
+                    >
+                      ⏰ {currentExperience}
+                    </motion.span>
+                  ) : (
+                    <span className="font-mono bg-gray-800 px-2 py-1 rounded text-gray-400 inline-block mt-1 md:mt-0 ml-1">
+                      Past experience
+                    </span>
+                  )}
                 </p>
               </div>
-              <Image
-                src={exp.image}
-                alt={exp.company}
-                width={80} // Ajuste selon ton besoin
-                height={80}
-                className="ml-6 rounded object-cover shadow-md"
-              />
-
+              <div className="order-1 md:order-2 mb-4 md:mb-0 md:ml-6">
+                <Image
+                  src={exp.image}
+                  alt={exp.company}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 md:w-20 md:h-20 rounded object-cover shadow-md"
+                />
+              </div>
             </motion.div>
           );
         })}
