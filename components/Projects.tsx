@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { X, Code, Calendar, Maximize, Minimize, Globe } from "lucide-react"
 import Slider from "react-slick"
 import { Project, projects } from "../types/project"
-import { FixedSizeList as List } from "react-window"
 // Import CSS files
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -87,6 +86,7 @@ export default function Projects() {
             <div className="p-4">
               <h3 className="text-lg font-semibold mb-2 text-white">
                 {project.name}
+              </h3>
               <p className="text-gray-300 text-sm">Click to view details</p>
             </div>
           </motion.div>
@@ -180,7 +180,7 @@ export default function Projects() {
                     <h4 className="text-lg md:text-xl font-semibold mb-2 text-blue-300">
                       Key Features
                     </h4>
-                    {selectedProject.features?.length > 0 ? (
+                    {selectedProject.features && selectedProject.features?.length > 0 ? (
                       <div className="max-h-48 md:max-h-80 overflow-y-auto border border-gray-600 rounded-lg custom-scrollbar">
                         {selectedProject.features.map((feature, index) => (
                           <div
