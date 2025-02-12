@@ -16,6 +16,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null)
 
+  
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project)
   }
@@ -204,118 +205,6 @@ export default function Projects() {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            // Added overflow-auto and padding so modal is scrollable on mobile
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-            onClick={closeProjectDetails}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-gray-800 rounded-lg max-w-6xl w-full relative overflow-hidden"
-              // className="bg-gray-800 rounded-lg max-w-3xl w-full relative  h-96" 
-
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-white text-lg z-10"
-                onClick={closeProjectDetails}
-              >
-                <X size={28} />
-              </button>
-              <div className="flex flex-col md:flex-row  bg-gray-700">
-              <div className="md:w-2/3 p-6">
-                  <Slider {...sliderSettings} className="custom-slider mb-6">
-                    {selectedProject.images.map((image, index) => (
-                      <div
-                        key={index}
-                        // Use responsive height: smaller on mobile, larger on md and up
-                        className="relative h-64 md:h-[600px] cursor-pointer"
-                        onClick={() => handleImageClick(image, index)}
-                      >
-                        <Image
-                          src={image || "/placeholder.svg"}
-                          alt={`${selectedProject.name} Image ${index + 1}`}
-                          layout="fill"
-                          objectFit="contain"
-                          className="rounded-lg"
-                        />
-                        <div className="absolute top-4 right-4 bg-gray-800 bg-opacity-50 rounded-full p-2">
-                          <Maximize className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
-                </div>
-                <div className="md:w-1/3 p-6 bg-gray-800 rounded-r-lg">
-                  <h3 className="text-3xl font-bold mb-4 text-blue-400">{selectedProject.name}</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center text-gray-300">
-                      <Globe className="mr-2 h-5 w-5" />
-                      <span>{selectedProject.type}</span>
-                    </div>
-                    <div className="flex items-center text-gray-300">
-                      <Code className="mr-2 h-5 w-5" />
-                      <span>{selectedProject.technologies}</span>
-                    </div>
-                    <div className="flex items-center text-gray-300">
-                      <Calendar className="mr-2 h-5 w-5" />
-                      <span>Completed in {selectedProject.completedDate}</span>
-                    </div>
-                  </div>
-                  <div className="mt-6">
-                    <h4 className="text-xl font-semibold mb-2 text-blue-300">
-                      Project Overview
-                    </h4>
-                    <p className="text-gray-300 leading-relaxed">
-                      {selectedProject.description}
-                    </p>
-                  </div>
-                  <div className="mt-6">
-                    <h4 className="text-xl font-semibold mb-2 text-blue-300">
-                      Key Features
-                    </h4>
-                    {selectedProject.features &&
-                    selectedProject.features.length > 0 ? (
-                      <div className="h-80 overflow-hidden border border-gray-600 rounded-lg">
-                        <List
-                          height={320}
-                          itemCount={selectedProject.features.length}
-                          itemSize={50}
-                          width="100%"
-                          className="custom-scrollbar"
-                        >
-                          {({ index, style }) => (
-                            <div
-                              style={style}
-                              className="flex items-center text-white p-4 last:border-none transition-transform transform hover:bg-gray-600 hover:shadow-xl cursor-pointer custom-hover-bg"
-                            >
-                              <span className="text-yellow-500 mr-3">✔️</span>
-                              {selectedProject.features[index] ||
-                                "No feature available"}
-                            </div>
-                          )}
-                        </List>
-                      </div>
-                    ) : (
-                      <p className="text-gray-400">
-                        No specific features listed for this project.
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
-
       {/* Full-screen Image Modal */}
       <AnimatePresence>
         {fullScreenImage && (
