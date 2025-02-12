@@ -84,7 +84,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-12 md:py-20 bg-gray-900 text-white relative overflow-hidden"
+      className="py-12 md:py-12 bg-gray-900 text-white relative overflow-hidden"
     >
       <div className="absolute inset-0" />
       <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center text-blue-400">
