@@ -76,8 +76,21 @@ export interface Project {
         ],
         description: "A Laboratory Information Management System for efficient lab operations.",
         type: "Web Application",
-        technologies: "React, Node.js, MongoDB",
+        technologies: "Angular, .Net, SQL Server",
         completedDate: "2023",
+        features: [
+          "Sample Management",
+          "Data Acquisition & Storage",
+          "Analysis & Reporting",
+          "Result Distribution",
+          "Resource Management",
+          "Workflow Automation",
+          "User Access Control",
+          "Audit Trails & Compliance",
+          "Inventory & Reagents Tracking",
+          "Equipment Management",
+          "Integration with Lab Instruments"
+        ]
       },
       {
         name: "Yes STL",
@@ -97,8 +110,23 @@ export interface Project {
         ],
         description: "A web application for managing and tracking shipments.",
         type: "Web Application",
-        technologies: "React, Node.js, MongoDB",
+        technologies: "Angular, .Net, SQL Server",
         completedDate: "2023",
+        features: [
+          "Administration",
+          "System Configuration",
+          "Settlement Processing",
+          "Invoice Credit/Debit",
+          "Certificate Credit/Debit",
+          "Account Management",
+          "Transaction Monitoring",
+          "Reporting & Auditing",
+          "User Access Control",
+          "Automated Workflows",
+          "XML Export for TEJ Platform",
+          "Dashboard & Analytics"
+        ]
+        
       },
       {
         name: "AI dress recommendation",
@@ -112,8 +140,20 @@ export interface Project {
         ],
         description: "An AI-powered dress recommendation system using Python.",
         type: "Web Application",
-        technologies: "Python, TensorFlow, React",
-        completedDate: "2023",
+        technologies: "Python, TensorFlow, Angular",
+        completedDate: "2025",
+        features: [
+          "AI-Powered Dress Suggestions",
+          "User Preference Learning",
+          "Outfit Matching & Styling",
+          "Weather-Based Recommendations",
+          "Occasion-Based Suggestions",
+          "Virtual Try-On Preview",
+          "Trend Analysis & Updates",
+          "Shopping Integration",
+          "Multi-Category Filtering",
+          "Personalized Fashion Insights"
+        ]        
       },
       {
         name: "SBC",
@@ -124,10 +164,23 @@ export interface Project {
           "/images/SBC/full_p2.png",
           "/images/SBC/full_p3.png",
         ],
-        description: "A Single Board Computer management interface.",
+        description: "Self budget control system",
         type: "Web application",
-        technologies: "React, Node.js",
-        completedDate: "2023",
+        technologies: "Angular, Node.js, Spring boot, SQL, OpenApi",
+        completedDate: "2024",
+        features: [
+          "Income & Expense Tracking",
+          "Budget Planning & Allocation",
+          "Transaction Categorization",
+          "Multi-Account Management",
+          "Financial Goal Setting",
+          "Recurring Payment Reminders",
+          "Spending Analytics & Reports",
+          "Real-Time Balance Updates",
+          "Secure Data Encryption",
+          "OpenAPI Integration"
+        ]
+        
       },
       {
         name: "Hotel reservation",
@@ -141,8 +194,20 @@ export interface Project {
         ],
         description: "A web-based hotel reservation system with booking management.",
         type: "Web Application",
-        technologies: "React, Node.js, MongoDB",
-        completedDate: "2023",
+        technologies: "PHP, Bootstrap, SQL",
+        completedDate: "2021",
+        features: [
+          "Online Room Booking",
+          "Real-Time Availability Check",
+          "User Account Management",
+          "Secure Payment Processing",
+          "Reservation History & Management",
+          "Automated Booking Confirmation",
+          "Room Type & Pricing Management",
+          "Guest Reviews & Ratings",
+          "Admin Dashboard & Reports",
+          "Multi-Language Support"
+        ]        
       },
       {
         name: "Real-time chat application",
@@ -155,8 +220,19 @@ export interface Project {
         ],
         description: "A web-based chat application with real-time messaging capabilities.",
         type: "Web Application",
-        technologies: "React, Socket.IO",
-        completedDate: "2023",
+        technologies: "PHP, Bootstrap, SQL",
+        completedDate: "2021",
+        features: [
+          "Instant Messaging",
+          "User Authentication & Profiles",
+          "One-on-One & Group Chats",
+          "Online/Offline Status Indicators",
+          "Message Read & Delivery Receipts",
+          "File & Image Sharing",
+          "Real-Time Notifications",
+          "Chat History & Search",
+          "Responsive UI for Mobile & Web"
+        ]    
       },
       {
         name: "Center camping MVC",
@@ -168,8 +244,21 @@ export interface Project {
         ],
         description: "An MVC version of the Camping center project.",
         type: "Web Application",
-        technologies: "React, Node.js, MongoDB",
-        completedDate: "2023",
+        technologies: "PHP, Laravel, SQL, HTML, CoreUI template",
+        completedDate: "2022",
+        features: [
+          "Booking & Reservations",
+          "User Registration & Management",
+          "Camping Spot Availability",
+          "Online Payment Integration",
+          "Event & Activity Scheduling",
+          "Admin Dashboard for Management",
+          "Customer Feedback & Reviews",
+          "Dynamic Pricing & Discounts",
+          "Real-Time Notifications",
+          "Responsive UI with CoreUI"
+        ]
+        
       },
       {
         name: "Info-Vision-Covid_Website",
@@ -181,8 +270,19 @@ export interface Project {
         ],
         description: "A website providing COVID-19 information and statistics.",
         type: "Web Application",
-        technologies: "React, Node.js",
-        completedDate: "2023",
+        technologies: "HTML, JavaScript, CSS, PHP",
+        completedDate: "2022",
+        features: [
+          "Live COVID-19 Statistics",
+          "Interactive Data Visualizations",
+          "Country-wise Case Tracking",
+          "Health & Safety Guidelines",
+          "News & Updates Section",
+          "Vaccination Information",
+          "User-Friendly Dashboard",
+          "Multi-Language Support",
+          "Responsive Design"
+        ]        
       },
     ],
     Mobile: [
