@@ -33,7 +33,7 @@ const experiences: Experience[] = [
   {
     company: "Tunisair",
     role: "Web Application Developer (Intern)",
-    period: "01/06/2021 - 01/07/2021",
+    period: "01/06/2021 - 15/08/2021",
     image: "https://pbs.twimg.com/profile_images/1251261871/tunisair_400x400.jpg",
   },
 ]
