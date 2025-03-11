@@ -15,7 +15,7 @@ export default function Header() {
           Seif Rahmouni Portfolio
         </Link>
         <div className="hidden md:flex space-x-4">
-          {["Experience", "Education", "Projects", "Skills", "Testimonials", "Contact"].map((item) => (
+          {["Experience", "Education", "Projects", "Skills", "Contact"].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
