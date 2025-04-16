@@ -681,11 +681,10 @@ export const projects: ProjectCategories = {
   Dashboard: [
     {
       name: "Analytical youtube channels",
-      images: ["/images/SeifAnalytics/p0.png", "/images/SeifAnalytics/p1.png", "/images/SeifAnalytics/p2.png"],
+      images: ["/images/SeifAnalytics/p0.png", "/images/SeifAnalytics/p1.png"],
       fullImages: [
         "/images/SeifAnalytics/full_p0.png",
         "/images/SeifAnalytics/full_p1.png",
-        "/images/SeifAnalytics/full_p2.png",
       ],
       description: "Our dashboard provides insightful visualizations, tracking channel performance metrics, estimating revenue, analyzing growth over time.",
       type: "Dashboard",

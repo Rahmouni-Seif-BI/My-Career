@@ -1,6 +1,5 @@
 "use client"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Code, Calendar, Maximize, Minimize, Globe } from "lucide-react"
@@ -16,7 +15,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [fullScreenImage, setFullScreenImage] = useState<string | null>(null)
 
-  
+
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project)
   }
@@ -33,6 +32,37 @@ export default function Projects() {
   const closeFullScreenImage = () => {
     setFullScreenImage(null)
   }
+
+  // derive the array we’ll navigate
+  const fullImages = selectedProject?.fullImages?.length
+    ? selectedProject.fullImages
+    : selectedProject?.images || [];
+
+  // ← Add this useEffect for keyboard nav →
+  useEffect(() => {
+    if (!fullScreenImage || !fullImages.length) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeFullScreenImage();
+        return;
+      }
+      const currentIndex = fullImages.findIndex(img => img === fullScreenImage);
+      if (currentIndex === -1) return;
+
+      if (e.key === "ArrowLeft") {
+        const prev = fullImages[(currentIndex - 1 + fullImages.length) % fullImages.length];
+        setFullScreenImage(prev);
+      } else if (e.key === "ArrowRight") {
+        const next = fullImages[(currentIndex + 1) % fullImages.length];
+        setFullScreenImage(next);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [fullScreenImage, fullImages]);
+
 
   const sliderSettings = {
     dots: true,

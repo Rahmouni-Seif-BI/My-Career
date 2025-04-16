@@ -6,6 +6,7 @@ import Skills from "@/components/Skills"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Education from "@/components/Education"
+import Statistics from "@/components/Statistics"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <main className="container mx-auto px-4 py-8">
         <Hero />
+        <Statistics />
         <Experience />
         <Education />
         <Projects />

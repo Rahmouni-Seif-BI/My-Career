@@ -11,6 +11,7 @@ const educations = [
     period: "2022 – 01/06/2026",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIz35xRMeDZwRhvFLDuLK_-AG8SkBsDsx_bg&s",
+    attachedFile: "https://www.rdacell.com/newimages/coming-soon.jpg",
     isCountdown: true,       // Marks this entry to use a countdown timer
     endDate: "2026-06-01",     // Target end date (ISO format)
   },
@@ -18,6 +19,7 @@ const educations = [
     institution: "FSEGN",
     degree:
       "National Bachelor's in Management Informatics (Specialization: Business Intelligence)",
+    attachedFile: "/images/Education/Licence.png",
     period: "2019 – 2022",
     image:
       "https://fsegn.rnu.tn/images/social-networks-integrations/og_image_default.jpg",
@@ -88,7 +90,7 @@ export default function Education() {
                 <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2 text-blue-400 flex items-center">
                   {edu.institution}
                   <button
-                    onClick={() => setSelectedImage(edu.image)}
+                    onClick={() => setSelectedImage(edu.attachedFile)}
                     className="ml-2 p-1 bg-gray-700 rounded-full shadow-md hover:bg-gray-600 transition duration-200"
                   >
                     📜
@@ -100,12 +102,14 @@ export default function Education() {
                   {edu.period}{" "}
                   {isCountdownActive && (
                     <motion.span
-                      className="font-mono bg-gray-800 px-2 py-1 rounded text-yellow-400 shadow-lg"
-                      animate={{ opacity: [0.6, 1, 0.6], scale: [1, 1.1, 1] }}
-                      transition={{ repeat: Infinity, duration: 1.5 }}
+                      className="font-mono bg-gray-800 px-2 py-1 rounded text-yellow-400 shadow-lg inline-block mt-1 md:mt-0 ml-1"
+                      animate={{ opacity: [0.6, 1, 0.6], scale: [1, 1.05, 1] }}
+                      transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
                     >
                       {"⏰ " + countdown}
                     </motion.span>
+
+
                   )}
                 </p>
               </div>
@@ -134,8 +138,8 @@ export default function Education() {
         >
           <motion.img
             src={selectedImage}
-            alt="Full screen"
-            className="max-w-full max-h-full rounded-lg shadow-xl"
+            alt="Certificate"
+            className="max-w-[90%] max-h-[90vh] rounded-lg shadow-xl object-contain"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
           />

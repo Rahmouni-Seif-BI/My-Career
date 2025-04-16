@@ -9,6 +9,7 @@ type Experience = {
   role: string
   period: string
   image: string
+  attachedFile: string
 }
 
 const experiences: Experience[] = [
@@ -17,24 +18,28 @@ const experiences: Experience[] = [
     role: "Software Engineer (CDI)",
     period: "01/06/2022 - Present",
     image: "https://lh3.googleusercontent.com/p/AF1QipPh77heXzFa26ay65gXmidUgWb3nV1nC1iQjCrg=s680-w680-h510",
+    attachedFile: "https://www.rdacell.com/newimages/coming-soon.jpg",
   },
   {
     company: "Yasmine Engineering Systems",
     role: "Software Developer (Intern)",
     period: "Feb 2022 - Juin 2022",
     image: "https://lh3.googleusercontent.com/p/AF1QipPh77heXzFa26ay65gXmidUgWb3nV1nC1iQjCrg=s680-w680-h510",
+    attachedFile: "https://www.rdacell.com/newimages/coming-soon.jpg",
   },
   {
     company: "ISIE",
     role: "Voting Process Member",
     period: "2022 - 2022",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-9okODzJNq6I03dKSEJrso569lGGMkNQLg&s",
+    attachedFile: "https://www.rdacell.com/newimages/coming-soon.jpg",
   },
   {
     company: "Tunisair",
     role: "Web Application Developer (Intern)",
-    period: "01/06/2021 - 15/08/2021",
+    period: "28/06/2021 - 31/07/2021",
     image: "https://pbs.twimg.com/profile_images/1251261871/tunisair_400x400.jpg",
+    attachedFile: "/images/experience/tunisair.jpg",
   },
 ]
 
@@ -99,7 +104,7 @@ const parseDate = (dateStr: string): Date => {
       Apr: 3,
       May: 4,
       Jun: 5,
-      Juin: 5, // French variant
+      Juin: 5,
       Jul: 6,
       Aug: 7,
       Sep: 8,
@@ -182,21 +187,18 @@ export default function Experience() {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <span className="text-xs font-bold uppercase tracking-wider text-blue-100 mr-1"></span>
+
               <div className="flex items-center">
                 <motion.div
-                  className="flex items-center justify-center bg-blue-900/50 rounded-md px-2 py-1 border border-blue-400/30"
+                  className="flex items-center justify-center min-w-[120px]"
                   whileHover={{ scale: 1.1, backgroundColor: "rgba(30, 64, 175, 0.7)" }}
                 >
-                  <span className="text-xl font-bold text-white">{totalExperience.years}</span>
-                  <span className="text-xs ml-1 text-blue-200 font-medium">years</span>
+                  <span className="text-xl font-bold text-white">+</span>
+                  <span className="text-xl font-bold text-white text-2xl md:text-3xl">{totalExperience.years}</span>
+                  <span className="ml-1 text-blue-100 font-medium text-3xl md:text-2xl">years</span>
+
                 </motion.div>
-                <motion.div
-                  className="flex items-center justify-center bg-purple-900/50 rounded-md px-2 py-1 ml-2 border border-purple-400/30"
-                  whileHover={{ scale: 1.1, backgroundColor: "rgba(126, 34, 206, 0.7)" }}
-                >
-                  <span className="text-xl font-bold text-white">{totalExperience.months}</span>
-                  <span className="text-xs ml-1 text-purple-200 font-medium">months</span>
-                </motion.div>
+
               </div>
               <motion.div
                 className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full"
@@ -232,7 +234,7 @@ export default function Experience() {
                 <h3 className="text-xl md:text-2xl font-semibold mb-1 md:mb-2 text-blue-400 flex items-center">
                   {exp.company}
                   <button
-                    onClick={() => setSelectedImage(exp.image)}
+                    onClick={() => setSelectedImage(exp.attachedFile)}
                     className="ml-2 p-1 bg-gray-700 rounded-full shadow-md hover:bg-gray-600 transition duration-200"
                   >
                     📜
@@ -277,12 +279,12 @@ export default function Experience() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setSelectedImage("")}
         >
           <motion.img
             src={selectedImage}
-            alt="Full screen"
-            className="max-w-full max-h-full rounded-lg shadow-xl"
+            alt="Certificate"
+            className="max-w-[90%] max-h-[90vh] rounded-lg shadow-xl object-contain"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
           />
