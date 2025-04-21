@@ -325,8 +325,8 @@ export const projects: ProjectCategories = {
     },
     {
       name: "Application for Interaction with Architectural Plans of Real Estate Projects",
-      images: ["/images/FloorPlan/p0.png", "/images/FloorPlan/p1.png", "/images/FloorPlan/p2.png"],
-      fullImages: ["/images/FloorPlan/full_p0.png", "/images/FloorPlan/full_p1.png", "/images/FloorPlan/full_p2.png"],
+      images: ["/images/FloorPlan/p0.png", "/images/FloorPlan/p1.png", "/images/FloorPlan/p2.png", "/images/FloorPlan/p3.png", "/images/FloorPlan/p4.png", "/images/FloorPlan/p5.png"],
+      fullImages: ["/images/FloorPlan/full_p0.png", "/images/FloorPlan/full_p1.png", "/images/FloorPlan/full_p2.png", "/images/FloorPlan/full_p3.png", "/images/FloorPlan/full_p4.png", "/images/FloorPlan/full_p5.png"],
       description: "We offer a mobile application for dynamic zoning and problem-solving in real estate projects.",
       type: "Mobile application",
       technologies: "Flutter, Dart, C#, .Net, OpenApi, REST API",
