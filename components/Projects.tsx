@@ -33,14 +33,16 @@ export default function Projects() {
     setFullScreenImage(null)
   }
 
-  // derive the array we’ll navigate
-  const fullImages = selectedProject?.fullImages?.length
-    ? selectedProject.fullImages
-    : selectedProject?.images || [];
-
   // ← Add this useEffect for keyboard nav →
   useEffect(() => {
-    if (!fullScreenImage || !fullImages.length) return;
+    if (!fullScreenImage || !selectedProject) return;
+
+    // derive the array we'll navigate
+    const fullImages = selectedProject?.fullImages?.length
+      ? selectedProject.fullImages
+      : selectedProject?.images || [];
+
+    if (!fullImages.length) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -61,7 +63,7 @@ export default function Projects() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [fullScreenImage, fullImages]);
+  }, [fullScreenImage, selectedProject]);
 
 
   const sliderSettings = {
@@ -242,7 +244,7 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            // Added padding so the image modal doesn’t overflow on mobile
+            // Added padding so the image modal doesn't overflow on mobile
             className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
             onClick={closeFullScreenImage}
           >
