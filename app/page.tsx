@@ -7,6 +7,7 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Education from "@/components/Education"
 import Statistics from "@/components/Statistics"
+import CV from "@/components/CV"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Education />
         <Projects />
         <Skills/>
+        <CV />
         {/* <Testimonials /> */}
         <Contact />
       </main>

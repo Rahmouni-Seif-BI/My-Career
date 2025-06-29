@@ -15,7 +15,7 @@ export default function Header() {
           Seif Rahmouni Portfolio
         </Link>
         <div className="hidden md:flex space-x-4">
-          {["Experience", "Education", "Projects", "Skills", "Contact"].map((item) => (
+          {["Experience", "Education", "Projects", "Skills", "CV", "Contact"].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -31,7 +31,7 @@ export default function Header() {
       </nav>
       {isMenuOpen && (
         <div className="md:hidden bg-gray-800 py-2">
-          {["Experience", "Projects", "Skills", "Testimonials", "Contact"].map((item) => (
+          {["Experience", "Education", "Projects", "Skills", "CV", "Contact"].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
