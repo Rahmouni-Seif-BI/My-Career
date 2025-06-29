@@ -1,0 +1,57 @@
+//================>>>>>>>>>>>  Seif career professionnelle  <<<<<<<<=======================
+
+Work  experiances: 
+1/ Yasmine engineering systems
+2/ Tunisaire
+3/ ISIE
+
+Projects: 
+1/ Mobile : 
+- Seif-Delivery-Food
+- OMRAN Mobile
+- FloorPlan
+
+2/ Web: 
+- SGS Repporting 
+- Yes LIMS
+- Yes STL
+- Yes REMS
+- Application web de real-time-chat 
+- SBC 
+- SBC (micro services)
+- SBC MultiUser
+- Hotel reservation
+- E-com
+- IGNITE plateform
+- Camping center 
+- FloorPlan
+- AI  dress recommendation (AI  Model with  python)
+- Center camping MVC
+- Info-Vision-Covid_Website
+
+
+
+
+3/ Desktop:
+- Yes API (BC)
+- OMRAN Module stock
+- OMRAN Générateur
+- YesBS 
+- Automation du génération des services (mobile + web )
+- Automatisation de deployement de serveur yesBS
+- Automatisation de deployement d'application coté client
+- IGNITE server
+- YesLicense
+- Plan reservation
+- Form recognizer (Invoice azure api)
+- reservation  de camping 
+
+4/ Cloud: 
+- VMs
+- SAAS / PAAS / IAAS / DAAS
+- LoadBalancer
+
+5/ Dashboard: 
+- Seif analytics : PowerBi
+ 
+ 

@@ -12,15 +12,53 @@ export default function Contact() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null
+    message: string
+  }>({ type: null, message: '' })
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Delivered! I\’ll reply shortly—stay tuned.'
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Failed to send message. Please try again.'
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Network error. Please check your connection and try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
 
@@ -36,6 +74,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
             className="bg-gray-800 text-white border-gray-700"
           />
         </div>
@@ -47,6 +86,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
             className="bg-gray-800 text-white border-gray-700"
           />
         </div>
@@ -57,11 +97,28 @@ export default function Contact() {
             value={formData.message}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
             className="bg-gray-800 text-white border-gray-700"
           />
         </div>
-        <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-          Send Message
+        
+        {/* Status Message */}
+        {submitStatus.type && (
+          <div className={`mb-4 p-3 rounded-md ${
+            submitStatus.type === 'success' 
+              ? 'bg-green-100 text-green-800 border border-green-200' 
+              : 'bg-red-100 text-red-800 border border-red-200'
+          }`}>
+            {submitStatus.message}
+          </div>
+        )}
+        
+        <Button 
+          type="submit" 
+          disabled={isSubmitting}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:bg-gray-600 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
       </form>
     </section>
