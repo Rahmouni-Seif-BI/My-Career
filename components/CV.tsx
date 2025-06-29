@@ -1,14 +1,11 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { Download, Eye, FileText, X } from "lucide-react"
+import { Download, FileText, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 export default function CV() {
-  const [showCVModal, setShowCVModal] = useState(false)
-
   const handleDownload = () => {
     // Replace with your actual CV file path
     const cvUrl = "/documents/Seif_Rahmouni_CV.pdf"
@@ -26,7 +23,9 @@ export default function CV() {
   }
 
   const handleViewCV = () => {
-    setShowCVModal(true)
+    // Open PDF in new tab/window for better mobile compatibility
+    const cvUrl = "/documents/Seif_Rahmouni_CV.pdf"
+    window.open(cvUrl, '_blank')
   }
 
   return (
@@ -145,7 +144,7 @@ export default function CV() {
                 onClick={handleViewCV}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
               >
-                <Eye className="h-5 w-5" />
+                <ExternalLink className="h-5 w-5" />
                 <span>View CV</span>
               </Button>
               <Button
@@ -170,7 +169,7 @@ export default function CV() {
               <p className="text-gray-300 text-sm">
                 Software Engineer at Yasmine Engineering Systems with expertise in enterprise applications 
                 and international client projects across 
-                <span className="inline-flex items-left space-x-2 ml-2">
+                <span className="inline-flex items-center space-x-2 ml-2">
                   <div className="flex items-center space-x-1">
                     <Image 
                       src="/flags/morocco.png" 
@@ -228,45 +227,6 @@ export default function CV() {
           </div>
         </motion.div>
       </div>
-
-      {/* CV Modal */}
-      {showCVModal && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-          onClick={() => setShowCVModal(false)}
-        >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex justify-between items-center p-4 border-b bg-gray-50">
-              <h3 className="text-lg font-semibold text-gray-800">Seif Rahmouni - CV</h3>
-              <button
-                onClick={() => setShowCVModal(false)}
-                className="text-gray-500 hover:text-gray-700 transition-colors"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-
-            {/* PDF Viewer */}
-            <div className="h-[calc(90vh-80px)]">
-              <iframe
-                src="/documents/Seif_Rahmouni_CV.pdf"
-                className="w-full h-full"
-                title="CV Preview"
-              />
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
     </section>
   )
 } 
