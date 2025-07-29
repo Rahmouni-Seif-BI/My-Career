@@ -4,8 +4,12 @@ import { motion } from "framer-motion"
 import { Download, FileText, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useTranslations, useLocale } from "@/lib/i18n-client"
 
 export default function CV() {
+  const { locale } = useLocale()
+  const { t } = useTranslations(locale)
+  
   const handleDownload = () => {
     // Replace with your actual CV file path
     const cvUrl = "/documents/Seif_Rahmouni_CV.pdf"
@@ -37,10 +41,9 @@ export default function CV() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 text-blue-400">📄 Curriculum Vitae</h2>
+          <h2 className="text-3xl font-bold mb-4 text-blue-400">📄 {t('cv.title')}</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Download or view my comprehensive CV to learn more about my professional background, 
-            skills, and achievements in software engineering.
+            {t('cv.subtitle')}
           </p>
         </motion.div>
 
@@ -59,11 +62,11 @@ export default function CV() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white">Seif Rahmouni</h3>
-                  <p className="text-gray-400">Software Engineer</p>
+                  <p className="text-gray-400">{t('hero.title')}</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-sm text-gray-400">Last Updated</p>
+                <p className="text-sm text-gray-400">{t('cv.lastUpdated')}</p>
                 <p className="text-white font-semibold">January 2025</p>
               </div>
             </div>
@@ -71,36 +74,33 @@ export default function CV() {
             {/* CV Summary */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div>
-                <h4 className="text-lg font-semibold text-blue-400 mb-3">Professional Summary</h4>
+                <h4 className="text-lg font-semibold text-blue-400 mb-3">{t('cv.professionalSummary')}</h4>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Experienced software engineer with expertise in mobile, web, and desktop applications. 
-                  Specialized in .NET, Flutter, Angular, and Spring boot development with a strong focus on 
-                  delivering high-quality, scalable solutions.
+                  {t('cv.summaryText')}
                 </p>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-blue-400 mb-3">Key Highlights</h4>
+                <h4 className="text-lg font-semibold text-blue-400 mb-3">{t('cv.keyHighlights')}</h4>
                 <ul className="text-gray-300 text-sm space-y-2">
                   <li className="flex items-center">
                     <span className="text-green-400 mr-2">✓</span>
-                    3+ years of professional experience
+                    {t('cv.experienceYears')}
                   </li>
                   <li className="flex items-center">
                     <span className="text-green-400 mr-2">✓</span>
-                    Full-stack development expertise
+                    {t('cv.fullStackExpertise')}
                   </li>
                   <li className="flex items-center">
                     <span className="text-green-400 mr-2">✓</span>
-                    Mobile app development with Flutter
+                    {t('cv.mobileDevelopment')}
                   </li>
                   <li className="flex items-center">
                     <span className="text-green-400 mr-2">✓</span>
-                    Database design and management
+                    {t('cv.databaseDesign')}
                   </li>
                   <li className="flex items-center">
                     <span className="text-green-400 mr-2">✓</span>
-                    
-                    International clients: 
+                    {t('cv.internationalClients')}
                     <span className="inline-flex items-center space-x-2 ml-2">
                       <div className="flex items-center space-x-1">
                         <Image 
@@ -145,14 +145,14 @@ export default function CV() {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
               >
                 <ExternalLink className="h-5 w-5" />
-                <span>View CV</span>
+                <span>{t('cv.viewCV')}</span>
               </Button>
               <Button
                 onClick={handleDownload}
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
               >
                 <Download className="h-5 w-5" />
-                <span>Download PDF</span>
+                <span>{t('cv.downloadPDF')}</span>
               </Button>
             </div>
           </div>
@@ -165,10 +165,9 @@ export default function CV() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors"
             >
-              <h4 className="text-lg font-semibold text-blue-400 mb-3">Experience</h4>
+              <h4 className="text-lg font-semibold text-blue-400 mb-3">{t('nav.experience')}</h4>
               <p className="text-gray-300 text-sm">
-                Software Engineer at Yasmine Engineering Systems with expertise in enterprise applications 
-                and international client projects across 
+                {t('cv.experienceText')}
                 <span className="inline-flex items-center space-x-2 ml-2">
                   <div className="flex items-center space-x-1">
                     <Image 
@@ -207,9 +206,9 @@ export default function CV() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors"
             >
-              <h4 className="text-lg font-semibold text-blue-400 mb-3">Education</h4>
+              <h4 className="text-lg font-semibold text-blue-400 mb-3">{t('nav.education')}</h4>
               <p className="text-gray-300 text-sm">
-                Engineering Program in Software Engineering and Information Systems at ESPRIT.
+                {t('education.espritDegree')} {t('cv.atESPRIT')}.
               </p>
             </motion.div>
 
@@ -219,9 +218,9 @@ export default function CV() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors"
             >
-              <h4 className="text-lg font-semibold text-blue-400 mb-3">Skills</h4>
+              <h4 className="text-lg font-semibold text-blue-400 mb-3">{t('nav.skills')}</h4>
               <p className="text-gray-300 text-sm">
-                C#, .NET, Flutter, Angular, React, SQL Server, Docker, and more.
+                {t('cv.skillsText')}
               </p>
             </motion.div>
           </div>

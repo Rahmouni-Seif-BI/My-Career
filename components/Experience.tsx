@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useTranslations, useLocale } from "@/lib/i18n-client"
 
 type Experience = {
   company: string
@@ -142,6 +143,9 @@ const calculateTotalExperience = (): { years: number; months: number } => {
 }
 
 export default function Experience() {
+  const { locale } = useLocale()
+  const { t } = useTranslations(locale)
+  
   const [currentExperience, setCurrentExperience] = useState<string>(calculateExactExperience("2022-06-01"))
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [totalExperience, setTotalExperience] = useState<{ years: number; months: number }>({ years: 0, months: 0 })
@@ -161,7 +165,7 @@ export default function Experience() {
     <section id="experience" className="py-12 md:py-12 bg-gray-900 text-white relative overflow-hidden">
       <div className="absolute inset-0" />
       <div className="mb-8 md:mb-12 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-4">👨🏻‍💼 Work Experience</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-4">👨🏻‍💼 {t('experience.title')}</h2>
         <motion.div
           className="inline-block"
           initial={{ opacity: 0, y: -20 }}
@@ -195,7 +199,7 @@ export default function Experience() {
                 >
                   <span className="text-xl font-bold text-white">+</span>
                   <span className="text-xl font-bold text-white text-2xl md:text-3xl">{totalExperience.years}</span>
-                  <span className="ml-1 text-blue-100 font-medium text-3xl md:text-2xl">years</span>
+                  <span className="ml-1 text-blue-100 font-medium text-3xl md:text-2xl">{t('experience.years')}</span>
 
                 </motion.div>
 
@@ -253,7 +257,7 @@ export default function Experience() {
                     </motion.span>
                   ) : (
                     <span className="font-mono bg-gray-800 px-2 py-1 rounded text-gray-400 inline-block mt-1 md:mt-0 ml-1">
-                      Past experience
+                      {t('experience.current')}
                     </span>
                   )}
                 </p>

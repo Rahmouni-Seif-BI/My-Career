@@ -2,13 +2,13 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations, useLocale } from "@/lib/i18n-client";
 
 interface StatItemProps {
   value: string
   title: string
   symbol?: string        // optional, if you sometimes omit it
 }
-
 
 const StatItem: React.FC<StatItemProps> = ({ value, title, symbol }) => {
   const [count, setCount] = useState(0)
@@ -71,11 +71,14 @@ const StatItem: React.FC<StatItemProps> = ({ value, title, symbol }) => {
 };
 
 export default function Statistics() {
+  const { locale } = useLocale()
+  const { t } = useTranslations(locale)
+
   const stats = [
-    { value: "15", title: "Projects Completed", symbol: "+" },
-    { value: "98", title: "Client Satisfaction", symbol: "%" },
-    { value: "100", title: "Project delivery", symbol: "%" },
-    { value: "30", title: "Skills", symbol: "+" }
+    { value: "15", title: t('statistics.projects'), symbol: "+" },
+    { value: "98", title: t('statistics.clients'), symbol: "%" },
+    { value: "100", title: t('statistics.experience'), symbol: "%" },
+    { value: "30", title: t('statistics.skills'), symbol: "+" }
   ];
 
   return (
@@ -87,7 +90,7 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Statistics
+          {t('statistics.title')}
         </motion.h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

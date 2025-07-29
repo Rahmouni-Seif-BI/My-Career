@@ -5,17 +5,21 @@ import Link from "next/link"
 import { Menu, Code, User, GraduationCap, FolderOpen, Wrench, FileText, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { useTranslations, useLocale } from "@/lib/i18n-client"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { locale } = useLocale()
+  const { t } = useTranslations(locale)
 
   const navItems = [
-    { name: "Experience", href: "#experience", icon: User, color: "from-blue-500 to-cyan-400" },
-    { name: "Education", href: "#education", icon: GraduationCap, color: "from-blue-500 to-cyan-400" },
-    { name: "Projects", href: "#projects", icon: FolderOpen, color: "from-blue-500 to-cyan-400" },
-    { name: "Skills", href: "#skills", icon: Wrench, color: "from-blue-500 to-cyan-400" },
-    { name: "CV", href: "#cv", icon: FileText, color: "from-blue-500 to-cyan-400" },
-    { name: "Contact", href: "#contact", icon: Mail, color: "from-blue-500 to-cyan-400" },
+    { name: t('nav.experience'), href: "#experience", icon: User, color: "from-blue-500 to-cyan-400" },
+    { name: t('nav.education'), href: "#education", icon: GraduationCap, color: "from-blue-500 to-cyan-400" },
+    { name: t('nav.projects'), href: "#projects", icon: FolderOpen, color: "from-blue-500 to-cyan-400" },
+    { name: t('nav.skills'), href: "#skills", icon: Wrench, color: "from-blue-500 to-cyan-400" },
+    { name: t('nav.cv'), href: "#cv", icon: FileText, color: "from-blue-500 to-cyan-400" },
+    { name: t('nav.contact'), href: "#contact", icon: Mail, color: "from-blue-500 to-cyan-400" },
   ]
 
   return (
@@ -73,16 +77,24 @@ export default function Header() {
               </motion.div>
             )
           })}
+          
+          {/* Language Switcher */}
+          <div className="ml-4">
+            <LanguageSwitcher />
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <Button 
-          variant="ghost" 
-          className="md:hidden text-white hover:bg-gray-700/50 rounded-xl p-2 transition-all duration-300 group" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <Menu className="h-5 w-5 group-hover:scale-110 group-hover:rotate-90 transition-all duration-300" />
-        </Button>
+        {/* Mobile Menu Button and Language Switcher */}
+        <div className="md:hidden flex items-center space-x-2">
+          <LanguageSwitcher />
+          <Button 
+            variant="ghost" 
+            className="text-white hover:bg-gray-700/50 rounded-xl p-2 transition-all duration-300 group" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Menu className="h-5 w-5 group-hover:scale-110 group-hover:rotate-90 transition-all duration-300" />
+          </Button>
+        </div>
       </nav>
 
       {/* Mobile Navigation */}

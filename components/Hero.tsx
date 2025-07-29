@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useTranslations, useLocale } from "@/lib/i18n-client"
 
 const images = [
   "/images/Banner/banner.png",
@@ -36,6 +37,8 @@ interface CircleConfig {
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0)
   const containerRef = useRef<HTMLElement | null>(null)
+  const { locale } = useLocale()
+  const { t } = useTranslations(locale)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -222,24 +225,94 @@ export default function Hero() {
         className="relative text-center z-10 px-4"
       >
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-2 md:mb-4 text-white drop-shadow-[0_0_10px_rgba(6,182,212,0.7)]">
-          Seif&rsquo;s Professional Career
+          {t('hero.title')}
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl mb-4 md:mb-8 max-w-2xl mx-auto text-cyan-100 drop-shadow-[0_0_8px_rgba(207,250,254,0.5)]">
-          Experienced software engineer specializing in mobile, web, and desktop applications
+          {t('hero.subtitle')}
         </p>
-        <a
+        <p className="text-base md:text-lg mb-4 md:mb-6 max-w-xl mx-auto text-gray-300">
+          {t('hero.description')}
+        </p>
+        <motion.a
           href="#contact"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1.5 px-3 md:py-2 md:px-4 rounded-full transition-colors text-sm md:text-base glow-button"
+          className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+          whileHover={{ 
+            scale: 1.05,
+            boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)"
+          }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
-          Get in Touch
-        </a>
-        
-        <style jsx>{`
-          .glow-button {
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.7);
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-          }
-        `}</style>
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 group-hover:from-blue-500 group-hover:via-cyan-400 group-hover:to-blue-600 transition-all duration-500"></div>
+          
+          {/* Animated border */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+          
+          {/* Glowing effect */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-cyan-400/20 blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+          
+          {/* Button content */}
+          <span className="relative z-10 flex items-center space-x-2">
+            <span>{t('hero.cta')}</span>
+            <motion.svg 
+              className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              initial={{ x: 0 }}
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </motion.svg>
+          </span>
+          
+          {/* Particle effects on hover */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none"
+            initial={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full"
+                initial={{ 
+                  x: "50%", 
+                  y: "50%", 
+                  opacity: 0,
+                  scale: 0
+                }}
+                whileHover={{
+                  x: `${20 + Math.random() * 60}%`,
+                  y: `${20 + Math.random() * 60}%`,
+                  opacity: [0, 1, 0],
+                  scale: [0, 1, 0],
+                  transition: {
+                    duration: 1,
+                    delay: i * 0.1,
+                    ease: "easeOut"
+                  }
+                }}
+              />
+            ))}
+          </motion.div>
+          
+          {/* Ripple effect */}
+          <motion.div
+            className="absolute inset-0 rounded-full bg-white/20"
+            initial={{ scale: 0, opacity: 0 }}
+            whileHover={{ 
+              scale: [0, 1.5, 0], 
+              opacity: [0, 0.3, 0] 
+            }}
+            transition={{ duration: 0.6 }}
+          />
+        </motion.a>
       </motion.div>
     </section>
   )

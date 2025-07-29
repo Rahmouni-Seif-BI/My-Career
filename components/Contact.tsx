@@ -5,8 +5,12 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useTranslations, useLocale } from "@/lib/i18n-client"
 
 export default function Contact() {
+  const { locale } = useLocale()
+  const { t } = useTranslations(locale)
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,19 +46,19 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus({
           type: 'success',
-          message: 'Delivered! I\’ll reply shortly—stay tuned.'
+          message: t('contact.success')
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
         setSubmitStatus({
           type: 'error',
-          message: data.error || 'Failed to send message. Please try again.'
+          message: data.error || t('contact.error')
         });
       }
     } catch {
       setSubmitStatus({
         type: 'error',
-        message: 'Network error. Please check your connection and try again.'
+        message: t('contact.error')
       });
     } finally {
       setIsSubmitting(false);
@@ -64,13 +68,13 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-gray-900">
-      <h2 className="text-3xl font-bold mb-12 text-center text-blue-400">Get in Touch</h2>
+      <h2 className="text-3xl font-bold mb-12 text-center text-blue-400">{t('contact.title')}</h2>
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
         <div className="mb-4">
           <Input
             type="text"
             name="name"
-            placeholder="Your Name"
+            placeholder={t('contact.placeholder.name')}
             value={formData.name}
             onChange={handleChange}
             required
@@ -82,7 +86,7 @@ export default function Contact() {
           <Input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder={t('contact.placeholder.email')}
             value={formData.email}
             onChange={handleChange}
             required
@@ -93,7 +97,7 @@ export default function Contact() {
         <div className="mb-4">
           <Textarea
             name="message"
-            placeholder="Your Message"
+            placeholder={t('contact.placeholder.message')}
             value={formData.message}
             onChange={handleChange}
             required
@@ -118,7 +122,7 @@ export default function Contact() {
           disabled={isSubmitting}
           className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:bg-gray-600 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? t('contact.send') + '...' : t('contact.send')}
         </Button>
       </form>
     </section>
