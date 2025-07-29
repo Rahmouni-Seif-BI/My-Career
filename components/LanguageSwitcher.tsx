@@ -25,12 +25,12 @@ export default function LanguageSwitcher() {
         className="flex items-center space-x-2 text-white hover:bg-gray-700/50 rounded-xl px-3 py-2 transition-all duration-300 group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {/* <Globe className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" /> */}
         <Image 
           src={currentLanguage.flag} 
           alt={currentLanguage.code} 
           width={20}
           height={20}
+          unoptimized
           className="w-5 h-5 rounded-full border border-gray-400" 
         />
         <span className="hidden sm:block font-medium">{currentLanguage.code.toUpperCase()}</span>
@@ -64,6 +64,7 @@ export default function LanguageSwitcher() {
                   alt={language.code} 
                   width={20}
                   height={20}
+                  unoptimized
                   className="w-5 h-5 rounded-full border border-gray-400" 
                 />
                 <span className="font-medium">{language.name}</span>

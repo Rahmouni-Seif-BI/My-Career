@@ -6,7 +6,6 @@ const nextConfig = {
     GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD,
   },
   images: {
-    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",

@@ -24,7 +24,7 @@ const educations = [
     attachedFile: "/images/Education/Licence.png",
     period: "2019 – 2022",
     image:
-      "https://fsegn.rnu.tn/images/social-networks-integrations/og_image_default.jpg",
+      "https://ccsav.ca/wp-content/uploads/2024/02/logo-FSEG.png",
     degreeKey: "fsegnDegree", // Key for translation
   }
 ];
