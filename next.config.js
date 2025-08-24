@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+    unoptimized: false,
+    domains: [],
+  },
+  experimental: {
+    outputFileTracingRoot: undefined,
   },
 }
 

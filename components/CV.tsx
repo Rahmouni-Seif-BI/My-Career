@@ -108,6 +108,7 @@ export default function CV() {
                           alt="Morocco Flag" 
                           width={20} 
                           height={15}
+                          unoptimized
                           className="rounded-sm"
                         />
                         <span className="text-xs">Morocco</span>
@@ -118,6 +119,7 @@ export default function CV() {
                           alt="Côte d&apos;Ivoire Flag" 
                           width={20} 
                           height={15}
+                          unoptimized
                           className="rounded-sm"
                         />
                         <span className="text-xs">Côte d&apos;Ivoire</span>
@@ -128,6 +130,7 @@ export default function CV() {
                           alt="Tunisia Flag" 
                           width={20} 
                           height={15}
+                          unoptimized
                           className="rounded-sm"
                         />
                         <span className="text-xs">Tunisia</span>
@@ -175,6 +178,7 @@ export default function CV() {
                       alt="Morocco Flag" 
                       width={16} 
                       height={12}
+                      unoptimized
                       className="rounded-sm"
                     />
                   </div>
@@ -184,6 +188,7 @@ export default function CV() {
                       alt="Côte d&apos;Ivoire Flag" 
                       width={16} 
                       height={12}
+                      unoptimized
                       className="rounded-sm"
                     />
                   </div>
@@ -193,6 +198,7 @@ export default function CV() {
                       alt="Tunisia Flag" 
                       width={16} 
                       height={12}
+                      unoptimized
                       className="rounded-sm"
                     />
                   </div>
