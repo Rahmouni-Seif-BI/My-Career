@@ -120,13 +120,61 @@ export default function Education() {
                 </p>
               </div>
               <div className="order-1 md:order-2 mb-4 md:mb-0 md:ml-6">
-                <Image
-                  src={edu.image}
-                  alt={edu.institution}
-                  width={64}
-                  height={64}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded object-cover shadow-md"
-                />
+                {edu.institution === "Esprit" ? (
+                  <div className="relative group">
+                    <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 blur-sm"></div>
+                    <a
+                      href="https://www.esprit.tn/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative block cursor-pointer hover:scale-110 active:scale-95 transition-all duration-300 transform"
+                      title="Visit ESPRIT website"
+                    >
+                      <Image
+                        src={edu.image}
+                        alt={edu.institution}
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 md:w-20 md:h-20 rounded object-cover shadow-md border-2 border-purple-400/30 md:border-transparent md:hover:border-purple-400 transition-all duration-300"
+                      />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 shadow-lg">
+                        <span className="text-white text-xs">🔗</span>
+                      </div>
+                      <div className="absolute inset-0 bg-purple-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                    </a>
+                  </div>
+                ) : edu.institution === "FSEGN" ? (
+                  <div className="relative group">
+                    <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 blur-sm"></div>
+                    <a
+                      href="https://fsegn.rnu.tn/fr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative block cursor-pointer hover:scale-110 active:scale-95 transition-all duration-300 transform"
+                      title="Visit FSEGN website"
+                    >
+                      <Image
+                        src={edu.image}
+                        alt={edu.institution}
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 md:w-20 md:h-20 rounded object-cover shadow-md border-2 border-blue-400/30 md:border-transparent md:hover:border-blue-400 transition-all duration-300"
+                      />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 shadow-lg">
+                        <span className="text-white text-xs">🔗</span>
+                      </div>
+                      <div className="absolute inset-0 bg-blue-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                    </a>
+                  </div>
+                ) : (
+                  <Image
+                    src={edu.image}
+                    alt={edu.institution}
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 md:w-20 md:h-20 rounded object-cover shadow-md"
+                  />
+                )}
               </div>
             </motion.div>
           );

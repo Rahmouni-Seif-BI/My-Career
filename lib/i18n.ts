@@ -125,6 +125,31 @@ export const translations: Record<Locale, Translations> = {
       clients: 'Happy Clients',
       skills: 'Skills Mastered',
     },
+    blogs: {
+      title: 'Blogs & Achievements',
+      subtitle: 'Latest accomplishments, events, and innovative projects that showcase my professional journey',
+      featured: 'Featured',
+      viewMore: 'View More',
+      cta: {
+        title: 'Let\'s Connect on LinkedIn',
+        description: 'Follow my professional journey and stay updated with my latest achievements, technical insights, and industry contributions.',
+        button: 'Connect on LinkedIn'
+      },
+      // Blog post titles
+      smartTuniChecksTitle: 'Smart Tuni-Checks – Intelligent Bank Check Validator',
+      balDesProjetsTitle: 'Bal des Projets 2025 – ESB',
+      yesREMSTitle: 'YesREMS Enterprise Solution',
+      innovationAwardTitle: 'Innovation Award Winner',
+      devopsWorkshopTitle: 'DevOps Best Practices Workshop',
+      microservicesTitle: 'Microservices Migration Success',
+      // Blog post descriptions
+      smartTuniChecksDescription: 'Built an AI-powered bank check validation system that automates the entire process with OCR, QR code scanning, and intelligent validation rules. Developed during 3rd year Company Mission at ESPRIT.',
+      balDesProjetsDescription: 'Had the honor of presenting my project at the Bal des Projets at ESB, a landmark event that showcases a year of work, learning, and innovation.',
+      yesREMSDescription: 'Led development of a comprehensive Real Estate Management System serving 50+ clients across North Africa, improving operational efficiency by 40%.',
+      innovationAwardDescription: 'Received the \'Most Innovative Developer\' award at the Tunisian Tech Awards 2024 for contributions to AI and cloud computing solutions.',
+      devopsWorkshopDescription: 'Conducted a comprehensive workshop on DevOps best practices, CI/CD pipelines, and containerization for 100+ developers.',
+      microservicesDescription: 'Successfully migrated a monolithic application to microservices architecture, reducing deployment time by 70% and improving scalability.'
+    },
   },
   fr: {
     nav: {
@@ -414,6 +439,31 @@ export const translations: Record<Locale, Translations> = {
       projects: 'Projets Réalisés',
       clients: 'Clients Satisfaits',
       skills: 'Compétences Maîtrisées',
+    },
+    blogs: {
+      title: 'Blogs & Réalisations',
+      subtitle: 'Dernières réalisations, événements et projets innovants qui illustrent mon parcours professionnel',
+      featured: 'À la Une',
+      viewMore: 'Voir Plus',
+      cta: {
+        title: 'Connectons-nous sur LinkedIn',
+        description: 'Suivez mon parcours professionnel et restez informé de mes dernières réalisations, insights techniques et contributions à l\'industrie.',
+        button: 'Se Connecter sur LinkedIn'
+      },
+      // Blog post titles
+      smartTuniChecksTitle: 'Smart Tuni-Checks – Validateur Intelligent de Chèques Bancaires',
+      balDesProjetsTitle: 'Bal des Projets 2025 – ESB',
+      yesREMSTitle: 'Solution Entreprise YesREMS',
+      innovationAwardTitle: 'Lauréat du Prix d\'Innovation',
+      devopsWorkshopTitle: 'Atelier des Meilleures Pratiques DevOps',
+      microservicesTitle: 'Succès de Migration Microservices',
+      // Blog post descriptions
+      smartTuniChecksDescription: 'Construit un système de validation de chèques bancaires alimenté par l\'IA qui automatise l\'ensemble du processus avec OCR, scan de codes QR et règles de validation intelligentes. Développé lors de la Mission Entreprise de 3ème année à ESPRIT.',
+      balDesProjetsDescription: 'J\'ai eu l\'honneur de présenter mon projet lors du Bal des Projets à l\'ESB, un événement marquant qui valorise une année de travail, d\'apprentissage et d\'innovation.',
+      yesREMSDescription: 'Dirigé le développement d\'un système complet de gestion immobilière desservant plus de 50 clients à travers l\'Afrique du Nord, améliorant l\'efficacité opérationnelle de 40%.',
+      innovationAwardDescription: 'Reçu le prix \'Développeur le Plus Innovant\' aux Tech Awards Tunisiens 2024 pour les contributions aux solutions d\'IA et de cloud computing.',
+      devopsWorkshopDescription: 'Conduit un atelier complet sur les meilleures pratiques DevOps, les pipelines CI/CD et la conteneurisation pour plus de 100 développeurs.',
+      microservicesDescription: 'Migré avec succès une application monolithique vers une architecture microservices, réduisant le temps de déploiement de 70% et améliorant la scalabilité.'
     },
   },
 }

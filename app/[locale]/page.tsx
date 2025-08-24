@@ -7,6 +7,7 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Education from "@/components/Education"
 import Statistics from "@/components/Statistics"
+
 import CV from "@/components/CV"
 
 export default function Home() {
@@ -15,14 +16,16 @@ export default function Home() {
       <Header />
       <main className="container mx-auto px-4 py-8">
         <Hero />
-        <Statistics />
         <Experience />
         <Education />
+        {/* <Blogs /> */}
         <Projects />
         <Skills/>
         <CV />
-        {/* <Testimonials /> */}
         <Contact />
+        <Statistics />
+
+      
       </main>
       <Footer />
     </div>
