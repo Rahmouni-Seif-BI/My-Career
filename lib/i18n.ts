@@ -143,12 +143,21 @@ export const translations: Record<Locale, Translations> = {
       devopsWorkshopTitle: 'DevOps Best Practices Workshop',
       microservicesTitle: 'Microservices Migration Success',
       // Blog post descriptions
+      balDesProjets2025Description: 'I had the honor of presenting my project at the Project Ball at ESB, a landmark event that showcases a year of work, learning, and innovation.💡 It was an enriching experience, full of exchanges with students, teachers, and professionals. I was able to highlight the skills acquired throughout the year and share a concrete solution developed with passion.',
+
       smartTuniChecksDescription: 'Built an AI-powered bank check validation system that automates the entire process with OCR, QR code scanning, and intelligent validation rules. Developed during 3rd year Company Mission at ESPRIT.',
       balDesProjetsDescription: 'Had the honor of presenting my project at the Bal des Projets at ESB, a landmark event that showcases a year of work, learning, and innovation.',
       yesREMSDescription: 'Led development of a comprehensive Real Estate Management System serving 50+ clients across North Africa, improving operational efficiency by 40%.',
       innovationAwardDescription: 'Received the \'Most Innovative Developer\' award at the Tunisian Tech Awards 2024 for contributions to AI and cloud computing solutions.',
       devopsWorkshopDescription: 'Conducted a comprehensive workshop on DevOps best practices, CI/CD pipelines, and containerization for 100+ developers.',
-      microservicesDescription: 'Successfully migrated a monolithic application to microservices architecture, reducing deployment time by 70% and improving scalability.'
+      microservicesDescription: 'Successfully migrated a monolithic application to microservices architecture, reducing deployment time by 70% and improving scalability.',
+      // Category labels
+      categories: {
+        achievement: 'Achievement',
+        event: 'Event',
+        project: 'Project',
+        innovation: 'Innovation'
+      }
     },
   },
   fr: {
@@ -458,12 +467,20 @@ export const translations: Record<Locale, Translations> = {
       devopsWorkshopTitle: 'Atelier des Meilleures Pratiques DevOps',
       microservicesTitle: 'Succès de Migration Microservices',
       // Blog post descriptions
+      balDesProjets2025Description: 'J’ai eu l’honneur de présenter mon projet lors du Bal des Projets à l’ESB, un événement marquant qui valorise une année de travail, d’apprentissage et d’innovation.💡 Ce fut une expérience enrichissante, pleine d’échanges avec des étudiants, enseignants et professionnels. J’ai pu mettre en avant les compétences acquises tout au long de l’année et partager une solution concrète développée avec passion.',
       smartTuniChecksDescription: 'Construit un système de validation de chèques bancaires alimenté par l\'IA qui automatise l\'ensemble du processus avec OCR, scan de codes QR et règles de validation intelligentes. Développé lors de la Mission Entreprise de 3ème année à ESPRIT.',
-      balDesProjetsDescription: 'J\'ai eu l\'honneur de présenter mon projet lors du Bal des Projets à l\'ESB, un événement marquant qui valorise une année de travail, d\'apprentissage et d\'innovation.',
+      balDesProjetsDescription: 'Revivez les temps forts de la 12ème édition du Bal des Projets à ESPRIT ! Plus de 1200 étudiants participants, plus de 80 entreprises et plus de 250 stands mettant en avant les projets et le savoir-faire de nos étudiants. ',
       yesREMSDescription: 'Dirigé le développement d\'un système complet de gestion immobilière desservant plus de 50 clients à travers l\'Afrique du Nord, améliorant l\'efficacité opérationnelle de 40%.',
       innovationAwardDescription: 'Reçu le prix \'Développeur le Plus Innovant\' aux Tech Awards Tunisiens 2024 pour les contributions aux solutions d\'IA et de cloud computing.',
       devopsWorkshopDescription: 'Conduit un atelier complet sur les meilleures pratiques DevOps, les pipelines CI/CD et la conteneurisation pour plus de 100 développeurs.',
-      microservicesDescription: 'Migré avec succès une application monolithique vers une architecture microservices, réduisant le temps de déploiement de 70% et améliorant la scalabilité.'
+      microservicesDescription: 'Migré avec succès une application monolithique vers une architecture microservices, réduisant le temps de déploiement de 70% et améliorant la scalabilité.',
+      // Category labels
+      categories: {
+        achievement: 'Réussite',
+        event: 'Événement',
+        project: 'Projet',
+        innovation: 'Innovation'
+      }
     },
   },
 }

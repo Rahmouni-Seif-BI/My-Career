@@ -7,7 +7,7 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Education from "@/components/Education"
 import Statistics from "@/components/Statistics"
-
+import Blogs from "@/components/Blogs"
 import CV from "@/components/CV"
 
 export default function Home() {
@@ -16,9 +16,9 @@ export default function Home() {
       <Header />
       <main className="container mx-auto px-4 py-8">
         <Hero />
+        <Blogs />
         <Experience />
         <Education />
-        {/* <Blogs /> */}
         <Projects />
         <Skills/>
         <CV />

@@ -31,7 +31,9 @@ const blogPosts: BlogPost[] = [
     description: "Built an AI-powered bank check validation system that automates the entire process with OCR, QR code scanning, and intelligent validation rules. Developed during 3rd year Company Mission at ESPRIT.",
     descriptionKey: "smartTuniChecksDescription",
     image: "/images/Smart/check.png",
-    date: "2024-12-15",
+    date: "2025-06-01",
+    location: "ESB, Tunisia",
+    participants: 1200,
     category: "innovation",
     technologies: ["Python", "OpenCV", "FastAPI", "Spring Boot", "Angular", "PostgreSQL", "Ollama"],
     linkedinUrl: "https://www.linkedin.com/posts/seif-rahmouni-0233711b4_ai-smartbanking-ocr-activity-7334942936863768576-nixL?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADHjIdsBUtNF85pIgzjtupgUYcVja-6VdkI",
@@ -41,64 +43,77 @@ const blogPosts: BlogPost[] = [
     id: "2",
     title: "Bal des Projets 2025 – ESB",
     titleKey: "balDesProjetsTitle",
-    description: "Had the honor of presenting my project at the Bal des Projets at ESB, a landmark event that showcases a year of work, learning, and innovation.",
+    description: "Relive the highlights of the 12th edition of the Project Ball at ESPRIT! Over 1200 participating students, more than 80 companies and over 250 booths showcasing the projects and expertise of our students.",
     descriptionKey: "balDesProjetsDescription",
-    image: "/images/Banner/2banner.png",
-    date: "2025-01-15",
+    image: "/images/Smart/bal.png",
+    date: "2025-06-10",
     category: "event",
     location: "ESB, Tunisia",
-    participants: 200,
-    linkedinUrl: "https://linkedin.com/posts/your-profile_bal-des-projets-2025"
+    participants: 1200,
+    linkedinUrl: "https://www.linkedin.com/posts/esprit_2_espritseformerautrement-developpementdurable-activity-7356308539386036226-EgYU?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADHjIdsBUtNF85pIgzjtupgUYcVja-6VdkI"
   },
   {
     id: "3",
-    title: "YesREMS Enterprise Solution",
-    titleKey: "yesREMSTitle",
-    description: "Led development of a comprehensive Real Estate Management System serving 50+ clients across North Africa, improving operational efficiency by 40%.",
-    descriptionKey: "yesREMSDescription",
-    image: "/images/YesREMS/full_p0.png",
-    date: "2024-10-15",
-    category: "project",
-    technologies: [".NET", "Angular", "SQL Server", "Azure"],
-    linkedinUrl: "https://linkedin.com/posts/your-profile_yesrems-enterprise-solution"
-  },
-  {
-    id: "4",
-    title: "Innovation Award Winner",
-    titleKey: "innovationAwardTitle",
-    description: "Received the 'Most Innovative Developer' award at the Tunisian Tech Awards 2024 for contributions to AI and cloud computing solutions.",
-    descriptionKey: "innovationAwardDescription",
-    image: "/images/Banner/2banner.png",
-    date: "2024-09-30",
+    title: "🎓 Bal des Projets 2025 – ESB ✅",
+    titleKey: "balDesProjetsTitle",
+    description: "I had the honor of presenting my project at the Project Ball at ESB, a landmark event that showcases a year of work, learning, and innovation.💡 It was an enriching experience, full of exchanges with students, teachers, and professionals. I was able to highlight the skills acquired throughout the year and share a concrete solution developed with passion.",
+    descriptionKey: "balDesProjets2025Description",
+    image: "/images/Smart/bal2.png",
+    date: "2025-06-10",
     category: "achievement",
-    location: "Tunis, Tunisia",
-    linkedinUrl: "https://linkedin.com/posts/your-profile_innovation-award-2024"
+    location: "ESB, Tunisia",
+    participants: 1200,
+    linkedinUrl: "https://www.linkedin.com/posts/seif-rahmouni-0233711b4_baldesprojets-esb-projetaeztudiant-activity-7338676875289886720-5PoQ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADHjIdsBUtNF85pIgzjtupgUYcVja-6VdkI"
   },
-  {
-    id: "5",
-    title: "DevOps Best Practices Workshop",
-    titleKey: "devopsWorkshopTitle",
-    description: "Conducted a comprehensive workshop on DevOps best practices, CI/CD pipelines, and containerization for 100+ developers.",
-    descriptionKey: "devopsWorkshopDescription",
-    image: "/images/Banner/3banner.png",
-    date: "2024-08-15",
-    category: "event",
-    location: "Online",
-    participants: 100,
-    linkedinUrl: "https://linkedin.com/posts/your-profile_devops-workshop"
-  },
-  {
-    id: "6",
-    title: "Microservices Migration Success",
-    titleKey: "microservicesTitle",
-    description: "Successfully migrated a monolithic application to microservices architecture, reducing deployment time by 70% and improving scalability.",
-    descriptionKey: "microservicesDescription",
-    image: "/images/SBCMicroservices/full_p0.png",
-    date: "2024-07-20",
-    category: "project",
-    technologies: ["Docker", "Kubernetes", "Spring Boot", "MongoDB"],
-    linkedinUrl: "https://linkedin.com/posts/your-profile_microservices-migration"
-  }
+  // {
+  //   id: "3",
+  //   title: "YesREMS Enterprise Solution",
+  //   titleKey: "yesREMSTitle",
+  //   description: "Led development of a comprehensive Real Estate Management System serving 50+ clients across North Africa, improving operational efficiency by 40%.",
+  //   descriptionKey: "yesREMSDescription",
+  //   image: "/images/YesREMS/full_p0.png",
+  //   date: "2024-10-15",
+  //   category: "project",
+  //   technologies: [".NET", "Angular", "SQL Server", "Azure"],
+  //   linkedinUrl: "https://linkedin.com/posts/your-profile_yesrems-enterprise-solution"
+  // },
+  // {
+  //   id: "4",
+  //   title: "Innovation Award Winner",
+  //   titleKey: "innovationAwardTitle",
+  //   description: "Received the 'Most Innovative Developer' award at the Tunisian Tech Awards 2024 for contributions to AI and cloud computing solutions.",
+  //   descriptionKey: "innovationAwardDescription",
+  //   image: "/images/Banner/2banner.png",
+  //   date: "2024-09-30",
+  //   category: "achievement",
+  //   location: "Tunis, Tunisia",
+  //   linkedinUrl: "https://linkedin.com/posts/your-profile_innovation-award-2024"
+  // },
+  // {
+  //   id: "5",
+  //   title: "DevOps Best Practices Workshop",
+  //   titleKey: "devopsWorkshopTitle",
+  //   description: "Conducted a comprehensive workshop on DevOps best practices, CI/CD pipelines, and containerization for 100+ developers.",
+  //   descriptionKey: "devopsWorkshopDescription",
+  //   image: "/images/Banner/3banner.png",
+  //   date: "2024-08-15",
+  //   category: "event",
+  //   location: "Online",
+  //   participants: 100,
+  //   linkedinUrl: "https://linkedin.com/posts/your-profile_devops-workshop"
+  // },
+  // {
+  //   id: "6",
+  //   title: "Microservices Migration Success",
+  //   titleKey: "microservicesTitle",
+  //   description: "Successfully migrated a monolithic application to microservices architecture, reducing deployment time by 70% and improving scalability.",
+  //   descriptionKey: "microservicesDescription",
+  //   image: "/images/SBCMicroservices/full_p0.png",
+  //   date: "2024-07-20",
+  //   category: "project",
+  //   technologies: ["Docker", "Kubernetes", "Spring Boot", "MongoDB"],
+  //   linkedinUrl: "https://linkedin.com/posts/your-profile_microservices-migration"
+  // }
 ]
 
 const getCategoryIcon = (category: BlogPost['category']) => {
@@ -121,31 +136,17 @@ const getCategoryColor = (category: BlogPost['category']) => {
   }
 }
 
-const getCategoryLabel = (category: BlogPost['category'], locale: string) => {
-  const labels = {
-    en: {
-      achievement: 'Achievement',
-      event: 'Event',
-      project: 'Project',
-      innovation: 'Innovation'
-    },
-    fr: {
-      achievement: 'Réussite',
-      event: 'Événement',
-      project: 'Projet',
-      innovation: 'Innovation'
-    }
-  }
-  return labels[locale as keyof typeof labels]?.[category] || category
-}
+// Remove this function - we'll handle it inside the component
 
 export default function Blogs() {
   const { locale } = useLocale()
   const { t } = useTranslations(locale)
+
+
   const [selectedCategory, setSelectedCategory] = useState<BlogPost['category'] | 'all'>('all')
 
-  const filteredPosts = selectedCategory === 'all' 
-    ? blogPosts 
+  const filteredPosts = selectedCategory === 'all'
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory)
 
   const categories = ['all', 'achievement', 'event', 'project', 'innovation'] as const
@@ -154,7 +155,7 @@ export default function Blogs() {
     <section id="blogs" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-pink-900/10" />
-      
+
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
@@ -178,17 +179,24 @@ export default function Blogs() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
+
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
-                selectedCategory === category
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2 ${selectedCategory === category
                   ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg'
                   : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50'
-              }`}
+                }`}
             >
-              {category === 'all' ? '✨ All' : `${getCategoryIcon(category)} ${getCategoryLabel(category, locale)}`}
+              {category === 'all' ? (
+                <>✨ All</>
+              ) : (
+                <>
+                  {getCategoryIcon(category)}
+                  {t(`blogs.categories.${category}`)}
+                </>
+              )}
             </button>
           ))}
         </motion.div>
@@ -225,19 +233,20 @@ export default function Blogs() {
                   <div className="absolute top-4 right-4 z-10">
                     <div className={`bg-gradient-to-r ${getCategoryColor(post.category)} text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1`}>
                       {getCategoryIcon(post.category)}
-                      {getCategoryLabel(post.category, locale)}
+                      {t(`blogs.categories.${post.category}`)}
                     </div>
                   </div>
 
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative overflow-hidden">
                     <Image
                       src={post.image}
                       alt={t(`blogs.${post.titleKey}`)}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      width={400}
+                      height={300}
+                      className="w-full h-auto max-h-64 object-contain transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {/* Content */}
@@ -332,7 +341,7 @@ export default function Blogs() {
               {t('blogs.cta.description')}
             </p>
             <a
-              href="https://linkedin.com/in/your-profile"
+              href="https://linkedin.com/in/seif-rahmouni-0233711b4"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"

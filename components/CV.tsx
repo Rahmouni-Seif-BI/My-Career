@@ -101,7 +101,7 @@ export default function CV() {
                   <li className="flex items-center">
                     <span className="text-green-400 mr-2">✓</span>
                     {t('cv.internationalClients')}
-                    <span className="inline-flex items-center space-x-2 ml-2">
+                    <div className="inline-flex items-center space-x-2 ml-2">
                       <div className="flex items-center space-x-1">
                         <Image 
                           src="/flags/morocco.png" 
@@ -135,7 +135,7 @@ export default function CV() {
                         />
                         <span className="text-xs">Tunisia</span>
                       </div>
-                    </span>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -171,7 +171,7 @@ export default function CV() {
               <h4 className="text-lg font-semibold text-blue-400 mb-3">{t('nav.experience')}</h4>
               <p className="text-gray-300 text-sm">
                 {t('cv.experienceText')}
-                <span className="inline-flex items-center space-x-2 ml-2">
+                <div className="inline-flex items-center space-x-2 ml-2">
                   <div className="flex items-center space-x-1">
                     <Image 
                       src="/flags/morocco.png" 
@@ -202,7 +202,7 @@ export default function CV() {
                       className="rounded-sm"
                     />
                   </div>
-                </span>
+                </div>
               </p>
             </motion.div>
 

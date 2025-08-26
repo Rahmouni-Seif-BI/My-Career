@@ -9,7 +9,7 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: '/favicon.ico',
+        url: '/en/flags/favicon.ico',
         sizes: 'any',
       },
       {
