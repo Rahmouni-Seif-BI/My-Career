@@ -198,8 +198,8 @@ export default function Experience() {
                   whileHover={{ scale: 1.1, backgroundColor: "rgba(30, 64, 175, 0.7)" }}
                 >
                   <span className="text-xl font-bold text-white">+</span>
-                  <span className="text-xl font-bold text-white text-2xl md:text-3xl">{totalExperience.years}</span>
-                  <span className="ml-1 text-blue-100 font-medium text-3xl md:text-2xl">{t('experience.years')}</span>
+                  <span className="text-xl font-bold text-white text-3xl md:text-3xl">{totalExperience.years}</span>
+                  <span className="ml-1 text-blue-100 font-medium text-2xl md:text-2xl">{t('experience.years')}</span>
 
                 </motion.div>
 
