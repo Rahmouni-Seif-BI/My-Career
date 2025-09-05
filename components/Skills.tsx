@@ -5,7 +5,6 @@ import {
   FaCode, 
   FaDatabase, 
   FaTools, 
-  FaServer, 
   FaLaptopCode, 
   FaProjectDiagram, 
   FaUsersCog, 
