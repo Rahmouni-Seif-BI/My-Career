@@ -6,6 +6,25 @@ import { translations, locales, type Locale } from './i18n'
 // Hook to get translations (client-side)
 export function useTranslations(locale: Locale = 'en') {
   const getTranslation = (key: string): string => {
+    // Handle special cases for skills with dots and special characters
+    if (key.startsWith('skills.skills.')) {
+      const skillKey = key.replace('skills.skills.', '')
+      const localeTranslations = translations[locale] as Record<string, unknown>
+      const skills = localeTranslations?.skills as Record<string, unknown> | undefined
+      const skillsObj = skills?.skills as Record<string, string> | undefined
+      if (skillsObj && skillKey in skillsObj) {
+        return skillsObj[skillKey]
+      }
+      // Fallback to English
+      const enTranslations = translations.en as Record<string, unknown>
+      const enSkills = enTranslations?.skills as Record<string, unknown> | undefined
+      const enSkillsObj = enSkills?.skills as Record<string, string> | undefined
+      if (enSkillsObj && skillKey in enSkillsObj) {
+        return enSkillsObj[skillKey]
+      }
+      return skillKey
+    }
+    
     const keys = key.split('.')
     let value: string | Record<string, unknown> = translations[locale]
     

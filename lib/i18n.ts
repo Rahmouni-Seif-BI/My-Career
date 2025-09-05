@@ -20,8 +20,8 @@ export const translations: Record<Locale, Translations> = {
     },
     hero: {
       title: 'Software Engineer',
-      subtitle: 'Full Stack Developer & Cloud Architect',
-      description: 'Passionate about creating innovative solutions and building scalable applications',
+      subtitle: 'Full-Stack Developer | Techno-Functional Consultant',
+      description: 'Bridging technical expertise with strategic vision to deliver scalable, modern applications.',
       cta: 'Get In Touch',
     },
     experience: {
@@ -79,6 +79,63 @@ export const translations: Record<Locale, Translations> = {
       databases: 'Databases',
       applicationServers: 'Application Servers',
       toolsAndTesting: 'Tools & Testing',
+      devops: 'DevOps',
+      cloudAndServers: 'Cloud & Servers',
+      aiAndMl: 'AI & Machine Learning',
+      teamwork: 'Teamwork & Leadership',
+      // Individual skills
+      skills: {
+        // Programming Languages
+        'C#': 'C#',
+        'JavaScript': 'JavaScript',
+        'TypeScript': 'TypeScript',
+        'Node.js': 'Node.js',
+        'Dart': 'Dart',
+        // Frameworks
+        '.NET & .NET Core': '.NET & .NET Core',
+        'Entity Framework': 'Entity Framework',
+        'Angular': 'Angular',
+        'React': 'React',
+        'Next.js': 'Next.js',
+        'Flutter': 'Flutter',
+        // Databases
+        'SQL Server': 'SQL Server',
+        'PostgreSQL': 'PostgreSQL',
+        'MySQL': 'MySQL',
+        'Oracle Database': 'Oracle Database',
+        // DevOps
+        'Docker': 'Docker',
+        'Kubernetes': 'Kubernetes',
+        'Jenkins': 'Jenkins',
+        'CI/CD': 'CI/CD',
+        'DevOps': 'DevOps',
+        // Cloud & Servers
+        'Azure': 'Azure',
+        'Render': 'Render',
+        'Vercel': 'Vercel',
+        'Firebase': 'Firebase',
+        'IIS': 'IIS',
+        'Apache Tomcat': 'Apache Tomcat',
+        // Tools & Testing
+        'Postman': 'Postman',
+        'Swagger': 'Swagger',
+        'Mantis Tracker': 'Mantis Tracker',
+        'MS Project': 'MS Project',
+        // AI & ML
+        'Machine Learning': 'Machine Learning',
+        'Deep Learning': 'Deep Learning',
+        // Teamwork
+        'Team Work': 'Team Work',
+        'Team Lead': 'Team Lead',
+        'Encadrement': 'Mentoring',
+        'Strategy Meetings': 'Strategy Meetings',
+        'Conception': 'Design',
+        // Development Environment
+        'Git & SVN': 'Git & SVN',
+        'Windows & Linux': 'Windows & Linux',
+        'Visual Studio': 'Visual Studio',
+        'IntelliJ IDEA': 'IntelliJ IDEA',
+      },
     },
     contact: {
       title: 'Get In Touch',
@@ -171,8 +228,8 @@ export const translations: Record<Locale, Translations> = {
     },
     hero: {
       title: 'Ingénieur Logiciel',
-      subtitle: 'Ingénieur logiciel expérimenté spécialisé dans les applications mobile, web et desktop',
-      description: 'Passionné par la création de solutions innovantes et la construction d\'applications évolutives',
+      subtitle: 'Développeur Full-Stack | Consultant Techno-Fonctionnel',
+      description: 'Allier expertise technique et vision stratégique pour concevoir des applications modernes et évolutives.',
       cta: 'Me Contacter',
     },
     experience: {
@@ -403,6 +460,63 @@ export const translations: Record<Locale, Translations> = {
       databases: 'Bases de Données',
       applicationServers: 'Serveurs d\'Applications',
       toolsAndTesting: 'Outils & Tests',
+      devops: 'DevOps',
+      cloudAndServers: 'Cloud & Serveurs',
+      aiAndMl: 'IA & Apprentissage Automatique',
+      teamwork: 'Travail d\'Équipe & Leadership',
+      // Individual skills
+      skills: {
+        // Programming Languages
+        'C#': 'C#',
+        'JavaScript': 'JavaScript',
+        'TypeScript': 'TypeScript',
+        'Node.js': 'Node.js',
+        'Dart': 'Dart',
+        // Frameworks
+        '.NET & .NET Core': '.NET & .NET Core',
+        'Entity Framework': 'Entity Framework',
+        'Angular': 'Angular',
+        'React': 'React',
+        'Next.js': 'Next.js',
+        'Flutter': 'Flutter',
+        // Databases
+        'SQL Server': 'SQL Server',
+        'PostgreSQL': 'PostgreSQL',
+        'MySQL': 'MySQL',
+        'Oracle Database': 'Oracle Database',
+        // DevOps
+        'Docker': 'Docker',
+        'Kubernetes': 'Kubernetes',
+        'Jenkins': 'Jenkins',
+        'CI/CD': 'CI/CD',
+        'DevOps': 'DevOps',
+        // Cloud & Servers
+        'Azure': 'Azure',
+        'Render': 'Render',
+        'Vercel': 'Vercel',
+        'Firebase': 'Firebase',
+        'IIS': 'IIS',
+        'Apache Tomcat': 'Apache Tomcat',
+        // Tools & Testing
+        'Postman': 'Postman',
+        'Swagger': 'Swagger',
+        'Mantis Tracker': 'Mantis Tracker',
+        'MS Project': 'MS Project',
+        // AI & ML
+        'Machine Learning': 'Apprentissage Automatique',
+        'Deep Learning': 'Apprentissage Profond',
+        // Teamwork
+        'Team Work': 'Travail d\'Équipe',
+        'Team Lead': 'Chef d\'Équipe',
+        'Encadrement': 'Encadrement',
+        'Strategy Meetings': 'Réunions Stratégiques',
+        'Conception': 'Conception',
+        // Development Environment
+        'Git & SVN': 'Git & SVN',
+        'Windows & Linux': 'Windows & Linux',
+        'Visual Studio': 'Visual Studio',
+        'IntelliJ IDEA': 'IntelliJ IDEA',
+      },
     },
     contact: {
       title: 'Me Contacter',
@@ -487,6 +601,25 @@ export const translations: Record<Locale, Translations> = {
 
 // Server-side translation function
 export function getTranslation(locale: Locale, key: string): string {
+  // Handle special cases for skills with dots and special characters
+  if (key.startsWith('skills.skills.')) {
+    const skillKey = key.replace('skills.skills.', '')
+    const localeTranslations = translations[locale] as Record<string, unknown>
+    const skills = localeTranslations?.skills as Record<string, unknown> | undefined
+    const skillsObj = skills?.skills as Record<string, string> | undefined
+    if (skillsObj && skillKey in skillsObj) {
+      return skillsObj[skillKey]
+    }
+    // Fallback to English
+    const enTranslations = translations.en as Record<string, unknown>
+    const enSkills = enTranslations?.skills as Record<string, unknown> | undefined
+    const enSkillsObj = enSkills?.skills as Record<string, string> | undefined
+    if (enSkillsObj && skillKey in enSkillsObj) {
+      return enSkillsObj[skillKey]
+    }
+    return skillKey
+  }
+  
   const keys = key.split('.')
   let value: string | Record<string, unknown> = translations[locale]
   

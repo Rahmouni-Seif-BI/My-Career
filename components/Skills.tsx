@@ -1,39 +1,64 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FaCode, FaDatabase, FaTools, FaServer, FaLaptopCode, FaProjectDiagram } from "react-icons/fa"
+import { 
+  FaCode, 
+  FaDatabase, 
+  FaTools, 
+  FaServer, 
+  FaLaptopCode, 
+  FaProjectDiagram, 
+  FaUsersCog, 
+  FaCogs, 
+  FaCloud 
+} from "react-icons/fa"
 import { useTranslations, useLocale } from "@/lib/i18n-client"
 
 const skillsData = [
   {
-    categoryKey: "developmentEnvironment",
-    icon: <FaLaptopCode className="text-blue-400 text-3xl" />,
-    skills: ["Git & SVN", "Windows & Linux", "Visual Studio", "IntelliJ IDEA", "Mantis Tracker", "MS Project"],
-  },
-  {
     categoryKey: "programmingLanguages",
     icon: <FaCode className="text-yellow-400 text-3xl" />,
-    skills: ["C#", "Node.js", "Dart", "JavaScript", "TypeScript"],
+    skills: ["C#", "JavaScript", "TypeScript", "Node.js", "Dart"],
   },
   {
     categoryKey: "frameworks",
     icon: <FaProjectDiagram className="text-green-400 text-3xl" />,
-    skills: ["Entity Framework", ".NET & .NET Core", "Flutter", "Angular", "React"],
+    skills: [".NET & .NET Core", "Entity Framework", "Angular", "React", "Next.js", "Flutter"],
   },
   {
     categoryKey: "databases",
     icon: <FaDatabase className="text-purple-400 text-3xl" />,
-    skills: ["SQL Server", "Oracle Database", "MySQL", "PostgreSQL"],
+    skills: ["SQL Server", "PostgreSQL", "MySQL", "Oracle Database"],
   },
   {
-    categoryKey: "applicationServers",
-    icon: <FaServer className="text-red-400 text-3xl" />,
-    skills: ["IIS", "Apache Tomcat"],
+    categoryKey: "devops",
+    icon: <FaCogs className="text-orange-400 text-3xl" />,
+    skills: ["Docker", "Kubernetes", "Jenkins", "CI/CD", "DevOps"],
+  },
+  {
+    categoryKey: "cloudAndServers",
+    icon: <FaCloud className="text-sky-400 text-3xl" />,
+    skills: ["Azure", "Render", "Vercel", "Firebase", "IIS", "Apache Tomcat"],
   },
   {
     categoryKey: "toolsAndTesting",
     icon: <FaTools className="text-gray-400 text-3xl" />,
-    skills: ["Postman", "Swagger", "Docker", "Kubernetes"],
+    skills: ["Postman", "Swagger", "Mantis Tracker", "MS Project"],
+  },
+  {
+    categoryKey: "aiAndMl",
+    icon: <FaLaptopCode className="text-blue-400 text-3xl" />,
+    skills: ["Machine Learning", "Deep Learning"],
+  },
+  {
+    categoryKey: "teamwork",
+    icon: <FaUsersCog className="text-pink-400 text-3xl" />,
+    skills: ["Team Work", "Team Lead", "Encadrement", "Strategy Meetings", "Conception"],
+  },
+  {
+    categoryKey: "developmentEnvironment",
+    icon: <FaLaptopCode className="text-indigo-400 text-3xl" />,
+    skills: ["Git & SVN", "Windows & Linux", "Visual Studio", "IntelliJ IDEA"],
   },
 ]
 
@@ -65,7 +90,7 @@ export default function Skills() {
                   key={idx}
                   className="px-3 py-1 text-sm font-medium bg-blue-600 text-white rounded-full shadow-sm"
                 >
-                  {skill}
+                  {t(`skills.skills.${skill}`)}
                 </span>
               ))}
             </div>
